@@ -1,7 +1,7 @@
 class Product < ActiveRecord::Base
   validates_presence_of     :title, :description, :image_url
   validates_numericality_of :price
-  validates_uniqueness_of   :title
+  validates_uniqueness_of   :title, :message => "should have a custom error message!"
   validates_length_of       :title, :minimum => 10
   validates_format_of       :image_url,
                             :with => /\.(gif|jpg|png)$/i,
