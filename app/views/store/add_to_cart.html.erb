@@ -4,3 +4,5 @@
     <li><%= item.quantity %> &times; <%=h item.title %></li>
   <% end %>
 </ul>
+
+<%= button_to "Empty Cart", :action => "empty_cart" %>
