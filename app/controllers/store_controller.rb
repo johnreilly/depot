@@ -8,6 +8,7 @@ class StoreController < ApplicationController
     product = Product.find(params[:id])
     @cart = find_cart
     @cart.add_product(product)
+    reset_index_hitcount
   rescue ActiveRecord::RecordNotFound
     logger.error("Attempt to access invalid product #{params[:id]}")
     redirect_to_index("Invalid Product")
@@ -38,5 +39,9 @@ class StoreController < ApplicationController
       session[:counter] = 0
     end
     return session[:counter] = session[:counter] + 1
+  end
+  
+  def reset_index_hitcount
+    session[:counter] = 0
   end
 end
