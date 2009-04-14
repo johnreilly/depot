@@ -1,6 +1,7 @@
 class StoreController < ApplicationController
   def index
     @products = Product.find_products_for_sale
+    increment_index_hitcount
   end
 
   def add_to_cart
@@ -25,5 +26,12 @@ class StoreController < ApplicationController
   def redirect_to_index(msg)
     flash[:notice] = msg
     redirect_to :action => "index"
+  end
+  
+  def increment_index_hitcount
+    if session[:counter].nil?
+      session[:counter] = 0
+    end
+    session[:counter] = session[:counter] + 1
   end
 end
