@@ -1,5 +1,5 @@
 <h1>Your Pragmatic Catalog</h1>
-<p>Index Hitcount: <%= pluralize(@index_hitcount, "hit") %></p>
+<%= display_index_hitcount(@index_hitcount) %>
 
 <% @products.each do |product| -%>
   <div class="entry">
