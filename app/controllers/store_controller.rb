@@ -1,7 +1,7 @@
 class StoreController < ApplicationController
   def index
     @products = Product.find_products_for_sale
-    increment_index_hitcount
+    @index_hitcount = increment_index_hitcount
   end
 
   def add_to_cart
@@ -18,6 +18,11 @@ class StoreController < ApplicationController
     redirect_to_index("Your cart is currently empty")
   end
   
+  protected
+  def index_hitcount
+    session[:counter]
+  end
+  
   private
   def find_cart
     session[:cart] ||= Cart.new
@@ -32,6 +37,6 @@ class StoreController < ApplicationController
     if session[:counter].nil?
       session[:counter] = 0
     end
-    session[:counter] = session[:counter] + 1
+    return session[:counter] = session[:counter] + 1
   end
 end
