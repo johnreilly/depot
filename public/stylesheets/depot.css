@@ -121,9 +121,10 @@ h1 {
   font-family: sans-serif;
 }
 
-#store .entry img {
+#store .entry input[type=image] {
   width: 75px;
   float: left;
+  display: inline;
 }
 
 
