@@ -21,6 +21,17 @@ class User < ActiveRecord::Base
     self.hashed_password = User.encrypted_password(self.password, self.salt)
   end
 
+  def self.authenticate(name, password)
+    user = self.find_by_name(name)
+    if user
+      expected_password = encrypted_password(password, user.salt)
+      if user.hashed_password != expected_password
+        user = nil
+      end
+    end
+    user
+  end
+
   private
   def password_non_blank
     errors.add(:password, "Missing Password") if hashed_password.blank?
