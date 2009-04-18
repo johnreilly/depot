@@ -6,6 +6,7 @@
     <td colspan="2">Total</td>
     <td class="total-cell"><%= number_to_currency(@cart.total_price) %></td>
   </tr>
-</table>
-
-<%= button_to_remote "Empty Cart", :url => {:action => "empty_cart"} %>
+</table>  
+<% form_remote_tag :url => {:action => 'empty_cart'} do %>
+  <%= submit_tag "Empty Cart" %>
+<% end %>
