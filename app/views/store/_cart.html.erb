@@ -8,4 +8,4 @@
   </tr>
 </table>
 
-<%= button_to "Empty Cart", :action => "empty_cart" %>
+<%= button_to_remote "Empty Cart", :url => {:action => "empty_cart"} %>
