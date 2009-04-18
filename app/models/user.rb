@@ -20,5 +20,9 @@ class User < ActiveRecord::Base
     string_to_hash = password + "my_awesome_depot_app" + salt
     Digest::SHA1.hexdigest(string_to_hash)
   end
+  
+  def create_new_salt
+    self.salt = self.object_id.to_s + rand.to_s
+  end
 
 end
