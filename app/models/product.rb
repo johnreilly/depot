@@ -8,6 +8,7 @@ class Product < ActiveRecord::Base
   validate                  :price_must_be_at_least_a_cent
   
   has_many :line_items
+  has_many :orders, :through => :line_items
   
   def self.find_products_for_sale
     find(:all, :order => "title")
