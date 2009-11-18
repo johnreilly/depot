@@ -9,6 +9,8 @@ class User < ActiveRecord::Base
   validates_confirmation_of :password
   
   validate :password_non_blank
+
+  after_destroy :prevent_destroying_last_user
   
   def password
     @password
@@ -46,4 +48,9 @@ class User < ActiveRecord::Base
     self.salt = self.object_id.to_s + rand.to_s
   end
 
+  def prevent_destroying_last_user
+    if User.count == 0
+      raise "Can't delete the last user!"
+    end
+  end
 end
