@@ -9,4 +9,12 @@ en:
       questions: "Questions"
       news: "News"
       contact: "Contact"
-      
+    cart:
+      title: "Your Cart"
+      button:
+        empty: "Empty Cart"
+        checkout: "Checkout"
+  main:
+    title: "Your Pragmatic Catalog"
+    button:
+      add: "Add to Cart"
