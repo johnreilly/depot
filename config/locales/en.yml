@@ -14,6 +14,15 @@ en:
       button:
         empty: "Empty Cart"
         checkout: "Checkout"
+        
+  checkout: 
+    legend: "Please Enter your Details"
+    name: "Name"
+    address: "Address"
+    email: "E-mail"
+    pay_type: "Pay with"
+    pay_prompt: "Select a payment method"
+    submit: "Place Order"
 
   main:
     title: "Your Pragmatic Catalog"

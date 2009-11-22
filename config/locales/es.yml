@@ -11,7 +11,16 @@ es:
       button:
         empty: "Vaciar Carrito"
         checkout: "Comprar"
-        
+
+  checkout: 
+    legend: "Por favor, introduzca sus datos"
+    name: "Nombre"
+    address: "Direcci&oacute;n"
+    email: "E-mail"
+    pay_type: "Pagar con"
+    pay_prompt: "Seleccione un m\xC3\xA9todo de pago"
+    submit: "Realizar Pedido"      
+
   main:
     title: "Su Cat&aacute;logo de Pragmatic"
     button:

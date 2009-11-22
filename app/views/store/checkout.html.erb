@@ -4,31 +4,31 @@
   
   <% form_for :order, :url => { :action => :save_order } do |form|  %>
     <fieldset>
-      <legend>Please Enter Your Details</legend>
+      <legend><%= t('checkout.legend') %></legend>
       
       <div>
-        <%= form.label :name %>
+        <%= form.label :name, t('checkout.name') %>
         <%= form.text_field :name, :size => 40 %>
       </div>
       
       <div>
-        <%= form.label :address %>
+        <%= form.label :address, t('checkout.address')%>
         <%= form.text_area :address, :rows => 3, :cols  => 40 %>
       </div>
       
       <div>
-        <%= form.label :email %>
+        <%= form.label :email, t('checkout.email') %>
         <%= form.text_field :email, :size => 40 %>
       </div>
       
       <div>
-        <%= form.label :pay_type, "Pay with:" %>
+        <%= form.label :pay_type, t('checkout.pay_type') %>
         <%= form.select :pay_type,
                         Order::PAYMENT_TYPES,
-                        :prompt => "Select a payment method" %>
+                        :prompt => t('checkout.pay_prompt') %>
       </div>
       
-      <%= submit_tag "Place Order", :class => "submit" %>
+      <%= submit_tag t('checkout.submit'), :class => "submit" %>
     </fieldset>
   <% end %>
 </div>
