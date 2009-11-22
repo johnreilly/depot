@@ -14,7 +14,17 @@ en:
       button:
         empty: "Empty Cart"
         checkout: "Checkout"
+
   main:
     title: "Your Pragmatic Catalog"
     button:
       add: "Add to Cart"
+
+  number: 
+    currency:
+      format: 
+        unit: "$" 
+        precision: 2 
+        separator: "." 
+        delimiter: "," 
+        format: "%u%n"

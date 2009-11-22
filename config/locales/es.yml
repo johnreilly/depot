@@ -16,3 +16,12 @@ es:
     title: "Su Cat&aacute;logo de Pragmatic"
     button:
       add: "A&ntilde;adir al Carrito"
+      
+  number: 
+    currency:
+      format: 
+        unit: "$US"
+        precision: 2 
+        separator: "," 
+        delimiter: "." 
+        format: "%n&nbsp;%u"
