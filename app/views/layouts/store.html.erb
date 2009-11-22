@@ -14,7 +14,7 @@
       <%= javascript_tag "$$('.locale input').each(Element.hide)" %>
     <% end %>
     <%= image_tag("logo.png") %>
-    <%= @page_title || "Pragmatic Bookshelf" %>
+    <%= @page_title || t('layout.title') %>
   </div>
   <div id="columns">
     <div id="side">
@@ -24,10 +24,10 @@
         <% end %>
       <% end %>
       
-      <a href="#">Home</a><br />
-      <a href="#">Questions</a><br />
-      <a href="#">News</a><br />
-      <a href="#">Contact</a><br />
+      <a href="#"><%= t('layout.side.home') %></a><br />
+      <a href="#"><%= t('layout.side.questions') %></a><br />
+      <a href="#"><%= t('layout.side.news') %></a><br />
+      <a href="#"><%= t('layout.side.contact') %></a><br />
       
       <% if session[:user_id] %>
         <br/>
